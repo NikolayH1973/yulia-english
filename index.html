@@ -1434,10 +1434,23 @@
   });
 
   /* ===== ACCORDION CARDS ===== */
-  document.querySelectorAll('.card-toggle-btn').forEach(function(btn) {
+  var cardToggles = document.querySelectorAll('.card-toggle-btn');
+  var cardsGrid   = document.querySelector('.cards');
+
+  function syncCardsAlign(){
+    var anyOpen = Array.from(cardToggles).some(function(b){
+      return b.getAttribute('aria-expanded') === 'true';
+    });
+    // stretch = все закрыты → одинаковая высота
+    // start   = есть открытая → не тянуть соседей
+    cardsGrid.style.alignItems = anyOpen ? 'start' : '';
+  }
+
+  cardToggles.forEach(function(btn) {
     btn.addEventListener('click', function() {
       var isOpen = btn.getAttribute('aria-expanded') === 'true';
       btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+      syncCardsAlign();
     });
   });
 
