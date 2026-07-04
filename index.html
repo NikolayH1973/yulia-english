@@ -600,25 +600,25 @@
 
   /* TABLET — 860px */
   @media (max-width: 860px){
-    section{ padding:60px 0; }
-    .hero{ padding:52px 0 0; }
+    section{ padding:28px 0; }
+    .hero{ padding:40px 0 0; }
     .about .wrap{ grid-template-columns:1fr; }
     .about-photo{ aspect-ratio:4/3; }
-    .about{ margin:0 14px; }
-    .cards{ grid-template-columns:1fr; gap:14px; }
+    .about{ margin:0 14px; padding:36px 0; }
+    .cards{ grid-template-columns:1fr; gap:12px; }
     .card-panel-content{ padding-left:26px; }
-    .journal{ margin:0 14px; }
+    .journal{ margin:0 14px; padding:36px 0; }
     .journal .wrap{ grid-template-columns:1fr; }
-    .barriers{ margin:0 14px; padding:56px 28px; }
+    .barriers{ margin:0 14px; padding:36px 22px; }
     .barrier-grid{ grid-template-columns:repeat(2,1fr); }
-    .hero-strip{ gap:22px; }
-    .section-head{ margin:0 0 32px; }
+    .hero-strip{ gap:20px; }
+    .section-head{ margin:0 0 20px; }
   }
 
   /* PHONE — 540px */
   @media (max-width: 540px){
-    section{ padding:44px 0; }
-    .hero{ padding:40px 0 0; }
+    section{ padding:20px 0; }
+    .hero{ padding:28px 0 0; }
     .wrap{ padding:0 16px; }
 
     /* nav */
@@ -629,45 +629,48 @@
 
     /* hero */
     .hero h1{ font-size:clamp(28px, 8vw, 42px); }
-    .hero-sub{ font-size:15px; margin-top:16px; }
-    .hero-ctas{ gap:10px; margin-top:24px; }
+    .hero-sub{ font-size:15px; margin-top:12px; }
+    .hero-ctas{ gap:10px; margin-top:18px; }
     .btn-primary{ padding:14px 22px; font-size:15px; }
     .btn-ghost{ padding:14px 18px; font-size:15px; }
     .hero-strip{
       flex-direction:column;
-      gap:14px;
+      gap:10px;
       align-items:center;
-      padding:20px 0 28px;
+      padding:14px 0 18px;
     }
     .stat b{ font-size:24px; }
     .stat span{ font-size:12px; }
 
     /* about */
-    .about{ margin:0 10px; border-radius:22px; padding:40px 0; }
+    .about{ margin:0 10px; border-radius:22px; padding:28px 0; }
     .about-photo{ aspect-ratio:1/1; border-radius:16px; }
     .about h2{ font-size:clamp(22px,5.5vw,28px); }
-    .about-quote{ font-size:17px; margin:14px 0 16px; }
-    .about-facts{ flex-direction:column; gap:14px; }
+    .about-quote{ font-size:17px; margin:10px 0 12px; }
+    .about-facts{ flex-direction:column; gap:10px; }
     .about-facts div{ max-width:100%; }
 
     /* cards */
-    .cards{ gap:10px; }
-    .card-toggle-btn{ padding:20px 18px; gap:10px; }
+    .cards{ gap:8px; }
+    .card-toggle-btn{ padding:18px 16px; gap:10px; }
     .card h3{ font-size:18px; min-height:0; }
-    .card-panel-content{ padding:0 18px 22px 18px; }
+    .card-panel-content{ padding:0 16px 18px 16px; }
 
     /* journal */
-    .journal{ margin:0 10px; border-radius:22px; padding:40px 0; }
-    .journal-note{ padding:20px 16px; }
-    .level-item{ padding:10px 11px; gap:10px; }
+    .journal{ margin:0 10px; border-radius:22px; padding:28px 0; }
+    .journal-note{ padding:16px 14px; }
+    .level-item{ padding:9px 11px; gap:10px; }
     .level-item b{ font-size:14px; }
     .level-item .level-text{ font-size:12.5px; }
     .btn-goal{ font-size:13px; padding:11px 18px; }
 
     /* barriers */
-    .barriers{ margin:0 10px; border-radius:22px; padding:40px 14px; }
-    .barrier-grid{ grid-template-columns:1fr; gap:10px; margin:20px auto 24px; }
-    .barrier-btn{ padding:14px 14px; }
+    .barriers{ margin:0 10px; border-radius:22px; padding:26px 12px; }
+    .barrier-grid{ grid-template-columns:1fr; gap:8px; margin:14px auto 18px; }
+    .barrier-btn{ padding:12px 14px; }
+
+    /* footer */
+    footer{ padding:22px 0 18px; }
   }
 
   /* SMALL PHONE — iPhone SE, 380px и меньше */
