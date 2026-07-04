@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Юля — английский язык в Тель-Авиве</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sand:#FAF3E8;
+    --sand-deep:#F0DCC9;
+    --ink:#16232E;
+    --ink-soft:#3C4C57;
+    --coral:#E8623D;
+    --coral-deep:#C94E2C;
+    --teal:#1F5C6B;
+    --gold:#F2A65A;
+    --line: rgba(22,35,46,0.12);
+    --radius: 18px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--sand);
+    color:var(--ink);
+    font-family:'Manrope', sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    line-height:1.12;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+  .eyebrow{
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--coral-deep);
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(250,243,232,0.86);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 28px;
+    max-width:1080px;
+    margin:0 auto;
+  }
+  .brand{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:22px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .brand-dot{
+    width:9px;height:9px;border-radius:50%;
+    background:var(--coral);
+    display:inline-block;
+  }
+  .nav-right{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .lang-switch{
+    display:flex;
+    gap:2px;
+    background:var(--sand-deep);
+    border-radius:999px;
+    padding:3px;
+  }
+  .lang-btn{
+    background:none;
+    border:none;
+    padding:5px 11px;
+    border-radius:999px;
+    font-family:'Manrope', sans-serif;
+    font-size:13px;
+    font-weight:700;
+    cursor:pointer;
+    color:var(--ink-soft);
+    transition:background .15s ease, color .15s ease;
+    letter-spacing:0.04em;
+  }
+  .lang-btn.active{
+    background:#fff;
+    color:var(--ink);
+    box-shadow:0 1px 3px rgba(22,35,46,0.10);
+  }
+  .nav-cta{
+    background:var(--ink);
+    color:var(--sand);
+    padding:10px 20px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:14px;
+    text-decoration:none;
+    white-space:nowrap;
+    transition:transform .18s ease, background .18s ease;
+  }
+  .nav-cta:hover{background:var(--coral); transform:translateY(-1px);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    padding:76px 0 0;
+  }
+  .sunset-arc{
+    position:absolute;
+    left:50%;
+    top:-260px;
+    transform:translateX(-50%);
+    width:900px;
+    height:900px;
+    border-radius:50%;
+    background: radial-gradient(circle at 50% 50%, var(--gold) 0%, var(--coral) 42%, rgba(232,98,61,0) 72%);
+    opacity:0.9;
+    filter: blur(2px);
+    pointer-events:none;
+  }
+  .sea-line{
+    position:absolute;
+    left:0; right:0;
+    bottom:0;
+    height:190px;
+    background:linear-gradient(180deg, rgba(31,92,107,0) 0%, var(--teal) 60%);
+    opacity:0.14;
+    pointer-events:none;
+  }
+  .hero-inner{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    padding-bottom:64px;
+  }
+  .hero h1{
+    font-size:clamp(38px, 6vw, 64px);
+    max-width:820px;
+    margin:0 auto;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--coral-deep);
+  }
+  .hero-sub{
+    max-width:560px;
+    margin:22px auto 0;
+    color:var(--ink-soft);
+    font-size:18px;
+  }
+  .hero-ctas{
+    margin-top:34px;
+    display:flex;
+    gap:14px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  .btn-primary{
+    background:var(--coral);
+    color:#fff;
+    padding:16px 30px;
+    border-radius:999px;
+    text-decoration:none;
+    font-weight:700;
+    font-size:16px;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    box-shadow:0 10px 24px rgba(232,98,61,0.28);
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 14px 30px rgba(232,98,61,0.36);}
+  .btn-ghost{
+    background:transparent;
+    color:var(--ink);
+    padding:16px 26px;
+    border-radius:999px;
+    border:1.5px solid var(--line);
+    text-decoration:none;
+    font-weight:700;
+    font-size:16px;
+  }
+  .hero-strip{
+    position:relative;
+    z-index:2;
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+    padding:26px 0 46px;
+    border-top:1px solid var(--line);
+  }
+  .stat{
+    text-align:center;
+  }
+  .stat b{
+    display:block;
+    font-family:'Fraunces', serif;
+    font-size:28px;
+    color:var(--teal);
+  }
+  .stat span{
+    font-size:13px;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- SECTION shared ---------- */
+  section{padding:88px 0;}
+  .section-head{
+    max-width:620px;
+    margin:0 0 46px;
+  }
+  .section-head h2{
+    font-size:clamp(28px,3.6vw,40px);
+    margin-top:10px;
+  }
+  .center{text-align:center; margin-left:auto; margin-right:auto;}
+
+  /* ---------- ABOUT ---------- */
+  .about{
+    background:var(--ink);
+    color:var(--sand);
+    border-radius:32px;
+    margin:0 20px;
+    padding:64px 0;
+    position:relative;
+  }
+  .about .wrap{
+    display:grid;
+    grid-template-columns:1fr 1.2fr;
+    gap:52px;
+    align-items:center;
+  }
+  .about-photo{
+    aspect-ratio:4/5;
+    border-radius:22px;
+    position:relative;
+    overflow:hidden;
+  }
+  .about-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center top;
+    display:block;
+  }
+  .about-photo-cap{
+    position:absolute;
+    left:18px; bottom:18px;
+    background:rgba(22,35,46,0.55);
+    color:#fff;
+    font-size:12px;
+    padding:6px 12px;
+    border-radius:999px;
+    backdrop-filter:blur(4px);
+  }
+  .about h2{color:#fff; font-size:clamp(26px,3.4vw,34px);}
+  .about p{color:rgba(250,243,232,0.82);}
+  .about-quote{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:21px;
+    color:var(--gold);
+    margin:18px 0 20px;
+    line-height:1.45;
+  }
+  .about-facts{
+    display:flex;
+    gap:26px;
+    margin-top:26px;
+    flex-wrap:wrap;
+  }
+  .about-facts div{
+    border-left:2px solid var(--coral);
+    padding-left:14px;
+    font-size:14px;
+    color:rgba(250,243,232,0.75);
+    max-width:180px;
+  }
+
+  /* ---------- FOR WHOM cards ---------- */
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+    align-items:start;
+  }
+  .card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .card:hover{transform:translateY(-4px); box-shadow:0 16px 32px rgba(22,35,46,0.08);}
+  .card-toggle-btn{
+    width:100%;
+    display:flex;
+    align-items:flex-start;
+    gap:16px;
+    text-align:left;
+    background:none;
+    border:none;
+    padding:30px 26px;
+    font:inherit;
+    color:inherit;
+    cursor:pointer;
+  }
+  .card .mark{
+    width:38px;height:38px;
+    border-radius:10px;
+    background:var(--sand-deep);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    color:var(--coral-deep);
+    flex-shrink:0;
+  }
+  .card-head{flex:1;}
+  .card h3{
+    font-size:20px;
+    line-height:1.12;
+    min-height:calc(1.12em * 2);
+    margin-bottom:10px;
+  }
+  .card p{color:var(--ink-soft); font-size:15px; margin:0;}
+  .card-chevron{
+    width:20px;
+    height:20px;
+    flex-shrink:0;
+    margin-top:4px;
+    position:relative;
+    transition:transform .25s ease;
+  }
+  .card-chevron::before, .card-chevron::after{
+    content:"";
+    position:absolute;
+    left:50%; top:50%;
+    width:10px; height:2px;
+    background:var(--ink-soft);
+    border-radius:2px;
+  }
+  .card-chevron::before{transform:translate(-50%,-50%) rotate(90deg);}
+  .card-toggle-btn[aria-expanded="true"] .card-chevron{transform:rotate(180deg);}
+  .card-toggle-btn[aria-expanded="true"] .card-chevron::before{opacity:0;}
+  .card-panel{
+    display:grid;
+    grid-template-rows:0fr;
+    transition:grid-template-rows .35s ease;
+  }
+  .card-toggle-btn[aria-expanded="true"] + .card-panel{
+    grid-template-rows:1fr;
+  }
+  .card-panel-inner{
+    overflow:hidden;
+    min-height:0;
+  }
+  .card-panel-content{
+    padding:0 26px 30px 82px;
+  }
+  .card-detail-list{
+    margin:0;
+    padding:0;
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    border-top:1px dashed var(--line);
+    padding-top:16px;
+  }
+  .card-detail-list li{
+    font-size:14px;
+    color:var(--ink-soft);
+    padding-left:16px;
+    position:relative;
+  }
+  .card-detail-list li::before{
+    content:"";
+    position:absolute;
+    left:0; top:8px;
+    width:5px; height:5px;
+    border-radius:50%;
+    background:var(--coral);
+  }
+
+  /* ---------- JOURNAL / WHAT WE DO ---------- */
+  .journal{
+    background:#fff;
+    border-radius:32px;
+    margin:0 20px;
+    padding:64px 0;
+  }
+  .journal .wrap{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:56px;
+    align-items:start;
+  }
+  .journal-list{
+    list-style:none;
+    margin:0; padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:0;
+  }
+  .journal-list li{
+    display:flex;
+    gap:16px;
+    padding:18px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  .journal-list li:last-child{border-bottom:none;}
+  .journal-list .num{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    color:var(--coral);
+    font-size:15px;
+    padding-top:2px;
+  }
+  .journal-note{
+    background:var(--sand);
+    border-radius:20px;
+    padding:30px;
+    border:1px solid var(--line);
+  }
+  .journal-note h3{font-size:18px; margin-bottom:12px;}
+  .level-list{
+    list-style:none;
+    margin:20px 0 0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .level-item{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    padding:12px 14px;
+    border-radius:12px;
+    background:#fff;
+    border:1px solid var(--line);
+    cursor:pointer;
+    transition:border-color .18s ease, transform .18s ease, background .18s ease;
+  }
+  .level-item:hover{border-color:var(--teal); transform:translateX(2px);}
+  .level-item[aria-pressed="true"]{
+    border-color:var(--coral);
+    background:var(--sand);
+  }
+  .level-check{
+    width:17px;
+    height:17px;
+    margin-top:3px;
+    border-radius:50%;
+    border:1.5px solid var(--line);
+    flex-shrink:0;
+    position:relative;
+    transition:border-color .18s ease, background .18s ease;
+  }
+  .level-item[aria-pressed="true"] .level-check{
+    border-color:var(--coral);
+    background:var(--coral);
+  }
+  .level-item[aria-pressed="true"] .level-check::after{
+    content:"";
+    position:absolute;
+    left:50%; top:50%;
+    width:6px; height:6px;
+    border-radius:50%;
+    background:#fff;
+    transform:translate(-50%,-50%);
+  }
+  .level-item b{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:15px;
+    color:var(--teal);
+    min-width:32px;
+    flex-shrink:0;
+  }
+  .level-item .level-text{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    line-height:1.5;
+  }
+  .level-item .level-text strong{
+    color:var(--ink);
+    font-weight:700;
+  }
+  .goal-cta{
+    margin-top:22px;
+    padding-top:20px;
+    border-top:1px dashed var(--line);
+  }
+  .goal-cta-label{
+    font-size:14px;
+    color:var(--ink-soft);
+    margin:0 0 14px;
+  }
+  .goal-cta-label strong{
+    color:var(--coral-deep);
+  }
+  .btn-goal{
+    padding:12px 22px;
+    font-size:14.5px;
+    box-shadow:none;
+    width:100%;
+    justify-content:center;
+  }
+  .btn-goal.is-disabled{
+    opacity:0.45;
+    pointer-events:none;
+    box-shadow:none;
+  }
+
+  /* ---------- CTA / barriers ---------- */
+  .barriers{
+    background:linear-gradient(180deg, var(--sand) 0%, var(--sand-deep) 100%);
+    border-radius:32px;
+    margin:0 20px;
+    padding:70px 34px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .barrier-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+    max-width:880px;
+    margin:36px auto 40px;
+  }
+  .barrier-btn{
+    background:#fff;
+    border:1.5px solid var(--line);
+    border-radius:14px;
+    padding:20px 14px;
+    font-size:14px;
+    font-weight:700;
+    color:var(--ink);
+    text-align:left;
+    cursor:pointer;
+    text-decoration:none;
+    display:block;
+    transition:border-color .18s ease, transform .18s ease;
+  }
+  .barrier-btn span{
+    display:block;
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-style:italic;
+    color:var(--coral-deep);
+    font-size:13px;
+    margin-bottom:6px;
+  }
+  .barrier-btn:hover{border-color:var(--coral); transform:translateY(-3px);}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    padding:50px 0 40px;
+    text-align:center;
+  }
+  footer .brand{justify-content:center;}
+  footer p{color:var(--ink-soft); font-size:14px; margin-top:10px;}
+  .footer-wave{
+    height:2px;
+    max-width:120px;
+    margin:0 auto 22px;
+    background:linear-gradient(90deg, transparent, var(--coral), transparent);
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 860px){
+    .about .wrap{grid-template-columns:1fr;}
+    .about-photo{aspect-ratio:16/9;}
+    .cards{grid-template-columns:1fr;}
+    .card-panel-content{padding-left:26px;}
+    .journal .wrap{grid-template-columns:1fr;}
+    .barrier-grid{grid-template-columns:repeat(2,1fr);}
+    .hero-strip{gap:26px;}
+  }
+  @media (max-width: 540px){
+    .nav-right{gap:8px;}
+    .nav-cta{padding:8px 14px; font-size:13px;}
+    .lang-btn{padding:4px 8px;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important;}
+  }
+
+  /* focus visibility */
+  a:focus-visible, button:focus-visible{
+    outline:2.5px solid var(--teal);
+    outline-offset:3px;
+  }
+
+  /* ==============================
+     ACCESSIBILITY WIDGET
+     ============================== */
+  .a11y-trigger{
+    position:fixed;
+    bottom:28px;
+    left:28px;
+    z-index:1000;
+    width:52px; height:52px;
+    border-radius:50%;
+    background:var(--teal);
+    color:#fff;
+    border:none;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 4px 20px rgba(31,92,107,0.38);
+    transition:transform .18s ease, background .18s ease;
+  }
+  .a11y-trigger:hover{ transform:scale(1.1); background:var(--coral); }
+  .a11y-trigger[aria-expanded="true"]{ background:var(--coral); }
+
+  .a11y-panel{
+    position:fixed;
+    bottom:92px;
+    left:28px;
+    z-index:999;
+    background:#fff;
+    border-radius:20px;
+    padding:22px;
+    width:272px;
+    box-shadow:0 8px 36px rgba(22,35,46,0.15);
+    border:1px solid var(--line);
+    opacity:0;
+    transform:translateY(14px) scale(0.97);
+    pointer-events:none;
+    transition:opacity .22s ease, transform .22s ease;
+  }
+  .a11y-panel.is-open{
+    opacity:1;
+    transform:translateY(0) scale(1);
+    pointer-events:all;
+  }
+  .a11y-panel-title{
+    font-family:'Fraunces', serif;
+    font-size:16px;
+    font-weight:600;
+    margin:0 0 16px;
+    color:var(--ink);
+  }
+  .a11y-opts{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .a11y-opt{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    padding:11px 14px;
+    border-radius:12px;
+    border:1.5px solid var(--line);
+    background:var(--sand);
+    cursor:pointer;
+    font:inherit;
+    color:inherit;
+    text-align:left;
+    width:100%;
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .a11y-opt:hover{ border-color:var(--teal); }
+  .a11y-opt[aria-pressed="true"],
+  .a11y-opt.active{
+    border-color:var(--coral);
+    background:rgba(232,98,61,0.07);
+  }
+  .a11y-opt-label{ font-size:13.5px; font-weight:600; color:var(--ink); }
+  .a11y-opt-icon{ font-size:15px; flex-shrink:0; opacity:0.65; }
+
+  /* font-size row */
+  .a11y-fontrow{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+    cursor:default;
+  }
+  .a11y-fontrow:hover{ border-color:var(--line); }
+  .a11y-size{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    width:100%;
+    justify-content:center;
+  }
+  .a11y-size-btn{
+    width:34px; height:34px;
+    border-radius:9px;
+    border:1.5px solid var(--line);
+    background:#fff;
+    font-family:'Fraunces', serif;
+    font-size:14px;
+    font-weight:700;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--ink);
+    transition:border-color .15s, background .15s;
+  }
+  .a11y-size-btn:hover{ border-color:var(--coral); background:var(--sand); }
+  .a11y-size-val{
+    font-size:13px;
+    color:var(--ink-soft);
+    min-width:38px;
+    text-align:center;
+    font-weight:700;
+  }
+  .a11y-reset{
+    margin-top:12px;
+    width:100%;
+    padding:10px;
+    border-radius:12px;
+    border:none;
+    background:var(--sand-deep);
+    font:inherit;
+    font-size:13px;
+    font-weight:700;
+    color:var(--ink);
+    cursor:pointer;
+    transition:background .15s, color .15s;
+  }
+  .a11y-reset:hover{ background:var(--ink); color:var(--sand); }
+
+  /* ---- body state classes ---- */
+  body.a11y-font-lg{ font-size:20px; }
+  body.a11y-font-xl{ font-size:23px; }
+
+  body.a11y-grayscale{ filter:grayscale(100%); }
+
+  body.a11y-contrast{
+    --sand:#fff;
+    --sand-deep:#e8e8e8;
+    --ink:#000;
+    --ink-soft:#1a1a1a;
+    --coral:#c00;
+    --coral-deep:#900;
+    --teal:#003366;
+    --gold:#885500;
+    --line:rgba(0,0,0,0.45);
+  }
+  body.a11y-contrast .nav-cta{ background:#000 !important; }
+  body.a11y-contrast .btn-primary{ background:#c00 !important; }
+  body.a11y-contrast .btn-ghost{ border-color:#000 !important; }
+
+  body.a11y-links a{
+    text-decoration:underline !important;
+    text-underline-offset:3px !important;
+  }
+  body.a11y-stop-anim *,
+  body.a11y-stop-anim *::before,
+  body.a11y-stop-anim *::after{
+    animation:none !important;
+    transition:none !important;
+  }
+  body.a11y-dyslexia,
+  body.a11y-dyslexia p,
+  body.a11y-dyslexia li,
+  body.a11y-dyslexia span{
+    font-family:Arial, Helvetica, sans-serif !important;
+    letter-spacing:0.04em !important;
+    word-spacing:0.12em !important;
+    line-height:1.9 !important;
+  }
+
+  @media (max-width:540px){
+    .a11y-trigger{ bottom:18px; left:18px; width:46px; height:46px; }
+    .a11y-panel{ left:14px; right:14px; width:auto; bottom:76px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand"><span class="brand-dot"></span>Юля · English</div>
+    <div class="nav-right">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button class="lang-btn active" data-lang="ru" type="button">RU</button>
+        <button class="lang-btn" data-lang="en" type="button">EN</button>
+      </div>
+      <a class="nav-cta" id="navCta" href="https://wa.me/972533218905" target="_blank" rel="noopener" data-i18n="nav_cta">Написать в WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="sunset-arc" aria-hidden="true"></div>
+  <div class="sea-line" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <p class="eyebrow" data-i18n="hero_eyebrow">Английский · Тель-Авив · онлайн и очно</p>
+    <h1 data-i18n-html="hero_h1">Заговорите по-английски <em>легко</em>, как на закате у моря</h1>
+    <p class="hero-sub" data-i18n="hero_sub">15 лет преподавания, диплом переводчика — и никакой зубрёжки. Только живой разговор, чёткое произношение и программа под вашу цель.</p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="https://wa.me/972533218905" target="_blank" rel="noopener" data-i18n="hero_btn1">
+        Написать Юле →
+      </a>
+      <a class="btn-ghost" href="#about" data-i18n="hero_btn2">Узнать больше</a>
+    </div>
+  </div>
+  <div class="wrap hero-strip">
+    <div class="stat"><b>15+</b><span data-i18n="stat1">лет преподавания</span></div>
+    <div class="stat"><b>0 → C2</b><span data-i18n="stat2">с нуля до Proficiency</span></div>
+    <div class="stat"><b data-i18n="stat3_b">дети / взрослые</b><span data-i18n="stat3">индивидуальная программа</span></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="about">
+    <div class="wrap">
+      <div class="about-photo">
+        <img src="image/IMG_0024.JPG" alt="Юля Велицкая — преподаватель английского">
+        <span class="about-photo-cap">Юля Велицкая</span>
+      </div>
+      <div>
+        <p class="eyebrow" style="color:var(--gold)" data-i18n="about_eyebrow">Обо мне</p>
+        <h2 data-i18n="about_h2">Английский — моя любовь с трёх лет, и я до сих пор не могу остановиться</h2>
+        <p class="about-quote" data-i18n="about_quote">«Хочу, чтобы грамматика стала вашим другом, а не наказанием»</p>
+        <p data-i18n="about_p">Окончила университет по специальности «перевод и преподавание иностранных языков». Больше 15 лет учу английскому детей и взрослых — начинала ещё в школе. Люблю животных, море, закаты и восходы, сырный пирог и фотографию — и это чувствуется в том, как проходят уроки: без напряжения, вживую, по-настоящему.</p>
+        <div class="about-facts">
+          <div data-i18n="fact1">Диплом переводчика и преподавателя иностранных языков</div>
+          <div data-i18n="fact2">Опыт со школьниками, взрослыми и подготовкой к экзаменам</div>
+          <div data-i18n="fact3">Индивидуальный темп и программа под каждого ученика</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow" data-i18n="whom_eyebrow">Кому подойдут уроки</p>
+      <h2 data-i18n="whom_h2">Три сценария, с которыми чаще всего приходят</h2>
+    </div>
+    <div class="cards">
+
+      <div class="card">
+        <button class="card-toggle-btn" type="button" aria-expanded="false" aria-controls="panel-scenario-1">
+          <span class="mark">01</span>
+          <span class="card-head">
+            <h3 data-i18n="card1_title">Школьникам</h3>
+            <p data-i18n="card1_desc">Разбираем школьную программу, закрываем пробелы и готовим базу для багрута — без паники перед контрольными.</p>
+          </span>
+          <span class="card-chevron" aria-hidden="true"></span>
+        </button>
+        <div class="card-panel" id="panel-scenario-1">
+          <div class="card-panel-inner">
+            <div class="card-panel-content">
+              <ul class="card-detail-list">
+                <li data-i18n="card1_li1">Разбираем сложные темы школьной программы — времена, косвенную речь, конструкции, которые путают на контрольных.</li>
+                <li data-i18n="card1_li2">Готовлю к багруту: модули 3, 4 и 5 — формат экзамена, типовые задания, тайминг и типичные ошибки.</li>
+                <li data-i18n="card1_li3">Работаем с реальными домашними заданиями и темами, которые сейчас проходят в классе, а не с абстрактными упражнениями.</li>
+                <li data-i18n="card1_li4">Беру учеников от начальной школы до выпускных классов — с учётом возраста и уровня.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <button class="card-toggle-btn" type="button" aria-expanded="false" aria-controls="panel-scenario-2">
+          <span class="mark">02</span>
+          <span class="card-head">
+            <h3 data-i18n="card2_title">Взрослым</h3>
+            <p data-i18n="card2_desc">Снимаем языковой барьер и учимся получать удовольствие от общения на английском — на работе и в поездках.</p>
+          </span>
+          <span class="card-chevron" aria-hidden="true"></span>
+        </button>
+        <div class="card-panel" id="panel-scenario-2">
+          <div class="card-panel-inner">
+            <div class="card-panel-content">
+              <ul class="card-detail-list">
+                <li data-i18n="card2_li1">Работаем со страхом ошибиться и звучать «глупо» — это первое, что мешает начать говорить, раньше грамматики.</li>
+                <li data-i18n="card2_li2">Готовим разговорный английский для работы: собеседования, переписка с коллегами, презентации.</li>
+                <li data-i18n="card2_li3">Разбираем бытовые ситуации: аэропорт, врач, банк, разговор с соседями — язык, который реально нужен в жизни.</li>
+                <li data-i18n="card2_li4">Гибкое расписание под занятого взрослого — без привязки к жёсткому учебнику и темпу класса.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <button class="card-toggle-btn" type="button" aria-expanded="false" aria-controls="panel-scenario-3">
+          <span class="mark">03</span>
+          <span class="card-head">
+            <h3 data-i18n="card3_title">Тем, кто хочет свободы</h3>
+            <p data-i18n="card3_desc">Для всех, кто хочет говорить свободно и уверенно — без привязки к учебнику, на реальных, живых темах.</p>
+          </span>
+          <span class="card-chevron" aria-hidden="true"></span>
+        </button>
+        <div class="card-panel" id="panel-scenario-3">
+          <div class="card-panel-inner">
+            <div class="card-panel-content">
+              <ul class="card-detail-list">
+                <li data-i18n="card3_li1">Говорим на темы, которые реально интересны: фильмы, новости, увлечения — а не тема из учебника «Мой город».</li>
+                <li data-i18n="card3_li2">Работаем над естественностью речи: идиомы, разговорные обороты и юмор вместо «книжного» английского.</li>
+                <li data-i18n="card3_li3">Готовим к переезду или жизни за границей — понимание живой, быстрой разговорной речи, а не дикторского английского.</li>
+                <li data-i18n="card3_li4">Тренируем уверенность в разговоре: на встречах, конференциях, в путешествиях — без ступора перед незнакомой темой.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="journal">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow" data-i18n="journal_eyebrow">Что происходит на занятиях</p>
+        <h2 style="margin-top:10px; font-size:32px;" data-i18n="journal_h2">Живой разговор вместо зубрёжки</h2>
+        <ul class="journal-list">
+          <li><span class="num">i.</span><span data-i18n="jl1">Ставим произношение и разбираем каждый звук отдельно</span></li>
+          <li><span class="num">ii.</span><span data-i18n="jl2">Учимся говорить в удовольствие, а не по страху ошибиться</span></li>
+          <li><span class="num">iii.</span><span data-i18n="jl3">Читаем, пишем и учимся понимать речь на слух</span></li>
+          <li><span class="num">iv.</span><span data-i18n="jl4">Делаем акцент на разговорной речи, не забывая про письмо и грамматику</span></li>
+          <li><span class="num">v.</span><span data-i18n="jl5">Закрываем пробелы в знаниях и нарабатываем нужную лексику</span></li>
+          <li><span class="num">vi.</span><span data-i18n="jl6">Работаем по современным, живым и интересным материалам</span></li>
+        </ul>
+      </div>
+      <div class="journal-note">
+        <h3 data-i18n="levels_h3">Программа под вас — от нуля до Proficiency</h3>
+        <p style="color:var(--ink-soft); font-size:15px;" data-i18n="levels_p">Темп и программа подбираются индивидуально: под школьную программу, международный экзамен, интервью на работу — или просто удовольствие от языка.</p>
+        <ul class="level-list" id="levelList">
+
+          <li class="level-item" role="button" tabindex="0" aria-pressed="false"
+              data-code="A1"
+              data-name-ru="Начальный" data-name-en="Beginner">
+            <span class="level-check" aria-hidden="true"></span>
+            <b>A1</b>
+            <span class="level-text" data-i18n-html="lvl_a1"><strong>Начальный.</strong> Простые фразы о себе, базовые вопросы, понимание медленной, чёткой речи.</span>
+          </li>
+
+          <li class="level-item" role="button" tabindex="0" aria-pressed="false"
+              data-code="A2"
+              data-name-ru="Элементарный" data-name-en="Elementary">
+            <span class="level-check" aria-hidden="true"></span>
+            <b>A2</b>
+            <span class="level-text" data-i18n-html="lvl_a2"><strong>Элементарный.</strong> Бытовые разговоры: покупки, транспорт, простые письма и объявления.</span>
+          </li>
+
+          <li class="level-item" role="button" tabindex="0" aria-pressed="false"
+              data-code="B1"
+              data-name-ru="Средний" data-name-en="Intermediate">
+            <span class="level-check" aria-hidden="true"></span>
+            <b>B1</b>
+            <span class="level-text" data-i18n-html="lvl_b1"><strong>Средний.</strong> Свободно говорите о знакомых темах: работа, путешествия, планы на будущее.</span>
+          </li>
+
+          <li class="level-item" role="button" tabindex="0" aria-pressed="false"
+              data-code="B2"
+              data-name-ru="Выше среднего" data-name-en="Upper-Intermediate">
+            <span class="level-check" aria-hidden="true"></span>
+            <b>B2</b>
+            <span class="level-text" data-i18n-html="lvl_b2"><strong>Выше среднего.</strong> Аргументируете точку зрения, смотрите фильмы и новости без субтитров.</span>
+          </li>
+
+          <li class="level-item" role="button" tabindex="0" aria-pressed="false"
+              data-code="C1"
+              data-name-ru="Продвинутый" data-name-en="Advanced">
+            <span class="level-check" aria-hidden="true"></span>
+            <b>C1</b>
+            <span class="level-text" data-i18n-html="lvl_c1"><strong>Продвинутый.</strong> Гибкая речь для учёбы и работы: презентации, деловая переписка, интервью.</span>
+          </li>
+
+          <li class="level-item" role="button" tabindex="0" aria-pressed="false"
+              data-code="C2"
+              data-name-ru="Proficiency" data-name-en="Proficiency">
+            <span class="level-check" aria-hidden="true"></span>
+            <b>C2</b>
+            <span class="level-text" data-i18n-html="lvl_c2"><strong>Proficiency.</strong> Уровень, близкий к носителю: нюансы, идиомы, юмор, тонкости стиля.</span>
+          </li>
+
+        </ul>
+
+        <div class="goal-cta" id="goalCta">
+          <p class="goal-cta-label"><span data-i18n="goal_prefix">Ваша цель:</span> <strong id="goalLabel" data-i18n="goal_placeholder">выберите уровень выше</strong></p>
+          <a class="btn-primary btn-goal is-disabled" id="goalLink" href="#" aria-disabled="true" target="_blank" rel="noopener">
+            <span data-i18n="goal_btn_prefix">Написать Юле про</span> <span id="goalShort" data-i18n="goal_btn_code">этот уровень</span> →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="start">
+  <div class="wrap">
+    <div class="barriers">
+      <p class="eyebrow" data-i18n="barriers_eyebrow">Хотите начать?</p>
+      <h2 style="font-size:clamp(26px,3.4vw,36px); max-width:640px; margin:14px auto 0;" data-i18n="barriers_h2">С чем у вас основная сложность прямо сейчас?</h2>
+      <div class="barrier-grid">
+        <a class="barrier-btn"
+           data-href-ru="https://wa.me/972533218905?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C%20%D0%AE%D0%BB%D1%8F!%20%D0%A3%20%D0%BC%D0%B5%D0%BD%D1%8F%20%D1%81%D0%BB%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D1%81%20%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%BD%D0%BE%D1%88%D0%B5%D0%BD%D0%B8%D0%B5%D0%BC"
+           data-href-en="https://wa.me/972533218905?text=Hi%20Julia!%20I%20have%20trouble%20with%20pronunciation"
+           href="https://wa.me/972533218905?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C%20%D0%AE%D0%BB%D1%8F!%20%D0%A3%20%D0%BC%D0%B5%D0%BD%D1%8F%20%D1%81%D0%BB%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D1%81%20%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%BD%D0%BE%D1%88%D0%B5%D0%BD%D0%B8%D0%B5%D0%BC"
+           target="_blank" rel="noopener">
+          <span>01</span><span data-i18n="b1">Произношение</span>
+        </a>
+        <a class="barrier-btn"
+           data-href-ru="https://wa.me/972533218905?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C%20%D0%AE%D0%BB%D1%8F!%20%D0%AF%20%D0%B1%D0%BE%D1%8E%D1%81%D1%8C%20%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%B8%D1%82%D1%8C%20%D0%BD%D0%B0%20%D0%B0%D0%BD%D0%B3%D0%BB%D0%B8%D0%B9%D1%81%D0%BA%D0%BE%D0%BC"
+           data-href-en="https://wa.me/972533218905?text=Hi%20Julia!%20I%27m%20afraid%20to%20speak%20English"
+           href="https://wa.me/972533218905?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C%20%D0%AE%D0%BB%D1%8F!%20%D0%AF%20%D0%B1%D0%BE%D1%8E%D1%81%D1%8C%20%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%B8%D1%82%D1%8C%20%D0%BD%D0%B0%20%D0%B0%D0%BD%D0%B3%D0%BB%D0%B8%D0%B9%D1%81%D0%BA%D0%BE%D0%BC"
+           target="_blank" rel="noopener">
+          <span>02</span><span data-i18n="b2">Страх говорить</span>
+        </a>
+        <a class="barrier-btn"
+           data-href-ru="https://wa.me/972533218905?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C%20%D0%AE%D0%BB%D1%8F!%20%D0%9C%D0%BD%D0%B5%20%D0%BD%D1%83%D0%B6%D0%BD%D0%B0%20%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0%20%D0%BA%20%D1%8D%D0%BA%D0%B7%D0%B0%D0%BC%D0%B5%D0%BD%D1%83"
+           data-href-en="https://wa.me/972533218905?text=Hi%20Julia!%20I%20need%20help%20preparing%20for%20an%20exam"
+           href="https://wa.me/972533218905?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C%20%D0%AE%D0%BB%D1%8F!%20%D0%9C%D0%BD%D0%B5%20%D0%BD%D1%83%D0%B6%D0%BD%D0%B0%20%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0%20%D0%BA%20%D1%8D%D0%BA%D0%B7%D0%B0%D0%BC%D0%B5%D0%BD%D1%83"
+           target="_blank" rel="noopener">
+          <span>03</span><span data-i18n="b3">Подготовка к экзамену</span>
+        </a>
+        <a class="barrier-btn"
+           data-href-ru="https://wa.me/972533218905?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C%20%D0%AE%D0%BB%D1%8F!%20%D0%9D%D1%83%D0%B6%D0%BD%D0%B0%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%20%D1%81%D0%BE%20%D1%88%D0%BA%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%BE%D0%B9"
+           data-href-en="https://wa.me/972533218905?text=Hi%20Julia!%20I%20need%20help%20with%20the%20school%20curriculum"
+           href="https://wa.me/972533218905?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C%20%D0%AE%D0%BB%D1%8F!%20%D0%9D%D1%83%D0%B6%D0%BD%D0%B0%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%20%D1%81%D0%BE%20%D1%88%D0%BA%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%BE%D0%B9"
+           target="_blank" rel="noopener">
+          <span>04</span><span data-i18n="b4">Школьная программа</span>
+        </a>
+      </div>
+      <a class="btn-primary" href="https://wa.me/972533218905" target="_blank" rel="noopener" data-i18n="barriers_btn">Написать в WhatsApp: 053-321-8905 →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-wave"></div>
+    <div class="brand"><span class="brand-dot"></span>Юля · English</div>
+    <p data-i18n="footer_p">Тель-Авив · онлайн и очные занятия · WhatsApp 053-321-8905</p>
+  </div>
+</footer>
+
+<!-- ♿ ACCESSIBILITY WIDGET -->
+<button class="a11y-trigger" id="a11yTrigger"
+        aria-expanded="false" aria-controls="a11yPanel"
+        aria-label="Доступность / Accessibility">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="12" cy="4" r="2.2" fill="currentColor"/>
+    <path d="M15.5 8.5H8.5C8.5 8.5 7 11 7 13.5l-2 1 .6 1.1 2.1-.9c.4 1.2.9 2.5 1.5 3.3L8 21h1.2l1.3-3.5h3l1.3 3.5H16l-1.2-4.1c.6-.8 1.1-2.1 1.5-3.3l2.1.9.6-1.1-2-1C17 11 15.5 8.5 15.5 8.5z" fill="currentColor"/>
+  </svg>
+</button>
+
+<div class="a11y-panel" id="a11yPanel"
+     role="dialog" aria-modal="false" aria-labelledby="a11yPanelTitle">
+  <p class="a11y-panel-title" id="a11yPanelTitle" data-i18n="a11y_title">Доступность</p>
+  <div class="a11y-opts">
+
+    <div class="a11y-opt a11y-fontrow">
+      <span class="a11y-opt-label" data-i18n="a11y_fontsize">Размер шрифта</span>
+      <div class="a11y-size">
+        <button class="a11y-size-btn" id="fontDec" aria-label="Уменьшить">A−</button>
+        <span class="a11y-size-val" id="fontVal">100%</span>
+        <button class="a11y-size-btn" id="fontInc" aria-label="Увеличить">A+</button>
+      </div>
+    </div>
+
+    <button class="a11y-opt" id="optContrast" aria-pressed="false">
+      <span class="a11y-opt-label" data-i18n="a11y_contrast">Высокий контраст</span>
+      <span class="a11y-opt-icon" aria-hidden="true">◑</span>
+    </button>
+
+    <button class="a11y-opt" id="optGrayscale" aria-pressed="false">
+      <span class="a11y-opt-label" data-i18n="a11y_grayscale">Оттенки серого</span>
+      <span class="a11y-opt-icon" aria-hidden="true">◻</span>
+    </button>
+
+    <button class="a11y-opt" id="optLinks" aria-pressed="false">
+      <span class="a11y-opt-label" data-i18n="a11y_links">Выделить ссылки</span>
+      <span class="a11y-opt-icon" aria-hidden="true">🔗</span>
+    </button>
+
+    <button class="a11y-opt" id="optAnim" aria-pressed="false">
+      <span class="a11y-opt-label" data-i18n="a11y_anim">Остановить анимации</span>
+      <span class="a11y-opt-icon" aria-hidden="true">⏸</span>
+    </button>
+
+    <button class="a11y-opt" id="optDyslexia" aria-pressed="false">
+      <span class="a11y-opt-label" data-i18n="a11y_dyslexia">Читаемый шрифт</span>
+      <span class="a11y-opt-icon" aria-hidden="true">Aa</span>
+    </button>
+
+  </div>
+  <button class="a11y-reset" id="a11yReset" data-i18n="a11y_reset">Сбросить всё</button>
+</div>
+
+<script>
+(function () {
+  /* ===== TRANSLATIONS ===== */
+  var T = {
+    ru: {
+      nav_cta:        'Написать в WhatsApp',
+      hero_eyebrow:   'Английский · Тель-Авив · онлайн и очно',
+      hero_h1:        'Заговорите по-английски <em>легко</em>, как на закате у моря',
+      hero_sub:       '15 лет преподавания, диплом переводчика — и никакой зубрёжки. Только живой разговор, чёткое произношение и программа под вашу цель.',
+      hero_btn1:      'Написать Юле →',
+      hero_btn2:      'Узнать больше',
+      stat1:          'лет преподавания',
+      stat2:          'с нуля до Proficiency',
+      stat3_b:        'дети / взрослые',
+      stat3:          'индивидуальная программа',
+      about_eyebrow:  'Обо мне',
+      about_h2:       'Английский — моя любовь с трёх лет, и я до сих пор не могу остановиться',
+      about_quote:    '«Хочу, чтобы грамматика стала вашим другом, а не наказанием»',
+      about_p:        'Окончила университет по специальности «перевод и преподавание иностранных языков». Больше 15 лет учу английскому детей и взрослых — начинала ещё в школе. Люблю животных, море, закаты и восходы, сырный пирог и фотографию — и это чувствуется в том, как проходят уроки: без напряжения, вживую, по-настоящему.',
+      fact1:          'Диплом переводчика и преподавателя иностранных языков',
+      fact2:          'Опыт со школьниками, взрослыми и подготовкой к экзаменам',
+      fact3:          'Индивидуальный темп и программа под каждого ученика',
+      whom_eyebrow:   'Кому подойдут уроки',
+      whom_h2:        'Три сценария, с которыми чаще всего приходят',
+      card1_title:    'Школьникам',
+      card1_desc:     'Разбираем школьную программу, закрываем пробелы и готовим базу для багрута — без паники перед контрольными.',
+      card1_li1:      'Разбираем сложные темы школьной программы — времена, косвенную речь, конструкции, которые путают на контрольных.',
+      card1_li2:      'Готовлю к багруту: модули 3, 4 и 5 — формат экзамена, типовые задания, тайминг и типичные ошибки.',
+      card1_li3:      'Работаем с реальными домашними заданиями и темами, которые сейчас проходят в классе, а не с абстрактными упражнениями.',
+      card1_li4:      'Беру учеников от начальной школы до выпускных классов — с учётом возраста и уровня.',
+      card2_title:    'Взрослым',
+      card2_desc:     'Снимаем языковой барьер и учимся получать удовольствие от общения на английском — на работе и в поездках.',
+      card2_li1:      'Работаем со страхом ошибиться и звучать «глупо» — это первое, что мешает начать говорить, раньше грамматики.',
+      card2_li2:      'Готовим разговорный английский для работы: собеседования, переписка с коллегами, презентации.',
+      card2_li3:      'Разбираем бытовые ситуации: аэропорт, врач, банк, разговор с соседями — язык, который реально нужен в жизни.',
+      card2_li4:      'Гибкое расписание под занятого взрослого — без привязки к жёсткому учебнику и темпу класса.',
+      card3_title:    'Тем, кто хочет свободы',
+      card3_desc:     'Для всех, кто хочет говорить свободно и уверенно — без привязки к учебнику, на реальных, живых темах.',
+      card3_li1:      'Говорим на темы, которые реально интересны: фильмы, новости, увлечения — а не тема из учебника «Мой город».',
+      card3_li2:      'Работаем над естественностью речи: идиомы, разговорные обороты и юмор вместо «книжного» английского.',
+      card3_li3:      'Готовим к переезду или жизни за границей — понимание живой, быстрой разговорной речи, а не дикторского английского.',
+      card3_li4:      'Тренируем уверенность в разговоре: на встречах, конференциях, в путешествиях — без ступора перед незнакомой темой.',
+      journal_eyebrow:'Что происходит на занятиях',
+      journal_h2:     'Живой разговор вместо зубрёжки',
+      jl1: 'Ставим произношение и разбираем каждый звук отдельно',
+      jl2: 'Учимся говорить в удовольствие, а не по страху ошибиться',
+      jl3: 'Читаем, пишем и учимся понимать речь на слух',
+      jl4: 'Делаем акцент на разговорной речи, не забывая про письмо и грамматику',
+      jl5: 'Закрываем пробелы в знаниях и нарабатываем нужную лексику',
+      jl6: 'Работаем по современным, живым и интересным материалам',
+      levels_h3:      'Программа под вас — от нуля до Proficiency',
+      levels_p:       'Темп и программа подбираются индивидуально: под школьную программу, международный экзамен, интервью на работу — или просто удовольствие от языка.',
+      lvl_a1: '<strong>Начальный.</strong> Простые фразы о себе, базовые вопросы, понимание медленной, чёткой речи.',
+      lvl_a2: '<strong>Элементарный.</strong> Бытовые разговоры: покупки, транспорт, простые письма и объявления.',
+      lvl_b1: '<strong>Средний.</strong> Свободно говорите о знакомых темах: работа, путешествия, планы на будущее.',
+      lvl_b2: '<strong>Выше среднего.</strong> Аргументируете точку зрения, смотрите фильмы и новости без субтитров.',
+      lvl_c1: '<strong>Продвинутый.</strong> Гибкая речь для учёбы и работы: презентации, деловая переписка, интервью.',
+      lvl_c2: '<strong>Proficiency.</strong> Уровень, близкий к носителю: нюансы, идиомы, юмор, тонкости стиля.',
+      goal_prefix:        'Ваша цель:',
+      goal_placeholder:   'выберите уровень выше',
+      goal_btn_prefix:    'Написать Юле про',
+      goal_btn_code:      'этот уровень',
+      goal_wa_msg:        'Привет, Юля! Хочу дойти до уровня ',
+      barriers_eyebrow:   'Хотите начать?',
+      barriers_h2:        'С чем у вас основная сложность прямо сейчас?',
+      b1: 'Произношение',
+      b2: 'Страх говорить',
+      b3: 'Подготовка к экзамену',
+      b4: 'Школьная программа',
+      barriers_btn:   'Написать в WhatsApp: 053-321-8905 →',
+      footer_p:       'Тель-Авив · онлайн и очные занятия · WhatsApp 053-321-8905',
+      page_title:     'Юля — английский язык в Тель-Авиве',
+      a11y_title:     'Доступность',
+      a11y_fontsize:  'Размер шрифта',
+      a11y_contrast:  'Высокий контраст',
+      a11y_grayscale: 'Оттенки серого',
+      a11y_links:     'Выделить ссылки',
+      a11y_anim:      'Остановить анимации',
+      a11y_dyslexia:  'Читаемый шрифт',
+      a11y_reset:     'Сбросить всё'
+    },
+    en: {
+      nav_cta:        'Message on WhatsApp',
+      hero_eyebrow:   'English · Tel Aviv · online & in-person',
+      hero_h1:        'Speak English <em>naturally</em>, like a sunset by the sea',
+      hero_sub:       '15 years of teaching, a degree in translation — and zero memorization. Just real conversation, clear pronunciation, and a program built around your goals.',
+      hero_btn1:      'Message Julia →',
+      hero_btn2:      'Learn more',
+      stat1:          'years of teaching',
+      stat2:          'from zero to Proficiency',
+      stat3_b:        'kids / adults',
+      stat3:          'personalized program',
+      about_eyebrow:  'About me',
+      about_h2:       'English has been my passion since the age of three — and I still can\'t stop',
+      about_quote:    '"I want grammar to become your friend, not your punishment"',
+      about_p:        'I graduated with a degree in translation and foreign language teaching. I\'ve been teaching English to children and adults for over 15 years — starting back at school. I love animals, the sea, sunsets, cheesecake, and photography — and you can feel it in how lessons go: relaxed, alive, and genuinely real.',
+      fact1:          'Degree in translation and foreign language teaching',
+      fact2:          'Experience with school students, adults, and exam preparation',
+      fact3:          'Individual pace and program tailored to each student',
+      whom_eyebrow:   'Who are the lessons for',
+      whom_h2:        'Three common scenarios students come with',
+      card1_title:    'School students',
+      card1_desc:     'We cover the school curriculum, fill in the gaps, and build a solid foundation for the Bagrut — without pre-test panic.',
+      card1_li1:      'We work through challenging curriculum topics — tenses, indirect speech, structures that trip students up on tests.',
+      card1_li2:      'Bagrut preparation: modules 3, 4 and 5 — exam format, typical tasks, timing, and common mistakes.',
+      card1_li3:      'We work with actual homework and topics being covered in class right now — not abstract textbook exercises.',
+      card1_li4:      'I teach students from primary school through graduation, adapting to age and level.',
+      card2_title:    'Adults',
+      card2_desc:     'We break down the language barrier and learn to enjoy communicating in English — at work and while traveling.',
+      card2_li1:      'We tackle the fear of making mistakes and sounding "stupid" — this blocks speaking even before grammar does.',
+      card2_li2:      'We build conversational English for work: interviews, correspondence with colleagues, presentations.',
+      card2_li3:      'We cover everyday situations: airport, doctor, bank, talking to neighbors — the language you actually need in life.',
+      card2_li4:      'Flexible scheduling for a busy adult — no rigid textbook pace or classroom tempo.',
+      card3_title:    'Those who want fluency',
+      card3_desc:     'For anyone who wants to speak freely and confidently — off the textbook, on real and engaging topics.',
+      card3_li1:      'We talk about things that genuinely interest you: films, news, hobbies — not a textbook unit called "My City".',
+      card3_li2:      'We work on naturalness: idioms, colloquial phrases, and humor instead of "textbook" English.',
+      card3_li3:      'Preparing for relocation or life abroad — understanding fast, natural spoken English, not just newsreader English.',
+      card3_li4:      'We build conversation confidence: in meetings, at conferences, while traveling — no more freezing up on unfamiliar topics.',
+      journal_eyebrow:'What happens in lessons',
+      journal_h2:     'Real conversation instead of memorization',
+      jl1: 'We work on pronunciation and break down each sound individually',
+      jl2: 'We learn to speak for pleasure, not out of fear of making mistakes',
+      jl3: 'We read, write, and train listening comprehension',
+      jl4: 'We focus on spoken language while keeping writing and grammar in mind',
+      jl5: 'We fill knowledge gaps and build the vocabulary you actually need',
+      jl6: 'We use modern, lively, and engaging materials',
+      levels_h3:      'A program for you — from zero to Proficiency',
+      levels_p:       'Pace and program are chosen individually: aligned to your school curriculum, international exam, job interview — or simply the joy of language.',
+      lvl_a1: '<strong>Beginner.</strong> Simple phrases about yourself, basic questions, understanding slow and clear speech.',
+      lvl_a2: '<strong>Elementary.</strong> Everyday conversations: shopping, transport, simple letters and notices.',
+      lvl_b1: '<strong>Intermediate.</strong> Talk freely about familiar topics: work, travel, plans for the future.',
+      lvl_b2: '<strong>Upper-Intermediate.</strong> Argue your point of view, watch films and news without subtitles.',
+      lvl_c1: '<strong>Advanced.</strong> Flexible speech for study and work: presentations, business correspondence, interviews.',
+      lvl_c2: '<strong>Proficiency.</strong> Near-native level: nuances, idioms, humor, and the subtleties of style.',
+      goal_prefix:        'Your goal:',
+      goal_placeholder:   'choose a level above',
+      goal_btn_prefix:    'Message Julia about',
+      goal_btn_code:      'this level',
+      goal_wa_msg:        'Hi Julia! I want to reach level ',
+      barriers_eyebrow:   'Ready to start?',
+      barriers_h2:        'What\'s your main challenge right now?',
+      b1: 'Pronunciation',
+      b2: 'Fear of speaking',
+      b3: 'Exam preparation',
+      b4: 'School curriculum',
+      barriers_btn:   'Message on WhatsApp: 053-321-8905 →',
+      footer_p:       'Tel Aviv · online & in-person · WhatsApp 053-321-8905',
+      page_title:     'Julia — English lessons in Tel Aviv',
+      a11y_title:     'Accessibility',
+      a11y_fontsize:  'Font size',
+      a11y_contrast:  'High contrast',
+      a11y_grayscale: 'Grayscale',
+      a11y_links:     'Highlight links',
+      a11y_anim:      'Stop animations',
+      a11y_dyslexia:  'Readable font',
+      a11y_reset:     'Reset all'
+    }
+  };
+
+  var WHATSAPP_PHONE = '972533218905';
+  var currentLang = localStorage.getItem('lang') || 'ru';
+  var selectedItem = null;
+
+  /* ===== LANG SWITCHER ===== */
+  function setLang(lang) {
+    currentLang = lang;
+    localStorage.setItem('lang', lang);
+    document.documentElement.lang = (lang === 'en') ? 'en' : 'ru';
+    document.title = T[lang].page_title;
+
+    // text nodes
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n');
+      if (T[lang][key] !== undefined) el.textContent = T[lang][key];
+    });
+
+    // html nodes (contain <em>, <strong> etc.)
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n-html');
+      if (T[lang][key] !== undefined) el.innerHTML = T[lang][key];
+    });
+
+    // lang buttons
+    document.querySelectorAll('.lang-btn').forEach(function(btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
+
+    // barrier links href
+    document.querySelectorAll('.barrier-btn[data-href-' + lang + ']').forEach(function(a) {
+      a.href = a.getAttribute('data-href-' + lang);
+    });
+
+    // if a level was already selected — rebuild the WhatsApp link with new language
+    if (selectedItem) {
+      updateGoalLink(selectedItem);
+    } else {
+      // reset placeholder text (already done via data-i18n, just keep disabled state)
+    }
+  }
+
+  /* ===== LEVEL SELECTOR ===== */
+  var items = document.querySelectorAll('.level-item');
+  var goalLabel = document.getElementById('goalLabel');
+  var goalShort = document.getElementById('goalShort');
+  var goalLink = document.getElementById('goalLink');
+  var goalBtnPrefix = goalLink.querySelector('[data-i18n="goal_btn_prefix"]');
+
+  function updateGoalLink(item) {
+    var code = item.getAttribute('data-code');
+    var name = item.getAttribute('data-name-' + currentLang);
+    var message = T[currentLang].goal_wa_msg + code + ' (' + name + ').';
+
+    goalLabel.textContent = code + ' — ' + name;
+    goalShort.textContent = code;
+    goalLink.href = 'https://wa.me/' + WHATSAPP_PHONE + '?text=' + encodeURIComponent(message);
+    goalLink.classList.remove('is-disabled');
+    goalLink.setAttribute('aria-disabled', 'false');
+  }
+
+  function selectLevel(item) {
+    items.forEach(function(el) { el.setAttribute('aria-pressed', 'false'); });
+    item.setAttribute('aria-pressed', 'true');
+    selectedItem = item;
+    updateGoalLink(item);
+  }
+
+  items.forEach(function(item) {
+    item.addEventListener('click', function() { selectLevel(item); });
+    item.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        selectLevel(item);
+      }
+    });
+  });
+
+  goalLink.addEventListener('click', function(e) {
+    if (goalLink.classList.contains('is-disabled')) e.preventDefault();
+  });
+
+  /* ===== ACCORDION CARDS ===== */
+  document.querySelectorAll('.card-toggle-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+    });
+  });
+
+  /* ===== LANG BUTTONS ===== */
+  document.querySelectorAll('.lang-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      setLang(btn.getAttribute('data-lang'));
+    });
+  });
+
+  /* ===== INIT ===== */
+  setLang(currentLang);
+
+  /* ===== ACCESSIBILITY WIDGET ===== */
+  (function(){
+    var body    = document.body;
+    var trigger = document.getElementById('a11yTrigger');
+    var panel   = document.getElementById('a11yPanel');
+    var fontVal = document.getElementById('fontVal');
+    var SCALES  = [100, 115, 130];
+    var fi      = 0;
+
+    function applyFont(){
+      body.classList.remove('a11y-font-lg','a11y-font-xl');
+      if (fi === 1) body.classList.add('a11y-font-lg');
+      if (fi === 2) body.classList.add('a11y-font-xl');
+      fontVal.textContent = SCALES[fi] + '%';
+    }
+
+    function setOpt(key, state){
+      var cls = key === 'anim' ? 'a11y-stop-anim' : 'a11y-' + key;
+      var cap = key.charAt(0).toUpperCase() + key.slice(1);
+      var btn = document.getElementById('opt' + cap);
+      body.classList.toggle(cls, state);
+      if (btn){
+        btn.setAttribute('aria-pressed', state ? 'true' : 'false');
+        btn.classList.toggle('active', state);
+      }
+    }
+
+    function saveAll(){
+      localStorage.setItem('a11y', JSON.stringify({
+        fi:        fi,
+        contrast:  body.classList.contains('a11y-contrast'),
+        grayscale: body.classList.contains('a11y-grayscale'),
+        links:     body.classList.contains('a11y-links'),
+        anim:      body.classList.contains('a11y-stop-anim'),
+        dyslexia:  body.classList.contains('a11y-dyslexia')
+      }));
+    }
+
+    function resetAll(){
+      fi = 0; applyFont();
+      ['contrast','grayscale','links','anim','dyslexia'].forEach(function(k){ setOpt(k, false); });
+      localStorage.removeItem('a11y');
+    }
+
+    // restore saved settings
+    var saved = {};
+    try { saved = JSON.parse(localStorage.getItem('a11y') || '{}'); } catch(e){}
+    fi = Math.min(2, Math.max(0, parseInt(saved.fi, 10) || 0));
+    applyFont();
+    ['contrast','grayscale','links','anim','dyslexia'].forEach(function(k){
+      if (saved[k]) setOpt(k, true);
+    });
+
+    // panel open/close
+    trigger.addEventListener('click', function(e){
+      e.stopPropagation();
+      var open = panel.classList.toggle('is-open');
+      trigger.setAttribute('aria-expanded', open.toString());
+    });
+    panel.addEventListener('click', function(e){ e.stopPropagation(); });
+    document.addEventListener('click', function(){
+      panel.classList.remove('is-open');
+      trigger.setAttribute('aria-expanded','false');
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && panel.classList.contains('is-open')){
+        panel.classList.remove('is-open');
+        trigger.setAttribute('aria-expanded','false');
+        trigger.focus();
+      }
+    });
+
+    // font size buttons
+    document.getElementById('fontInc').addEventListener('click', function(){
+      if (fi < 2){ fi++; applyFont(); saveAll(); }
+    });
+    document.getElementById('fontDec').addEventListener('click', function(){
+      if (fi > 0){ fi--; applyFont(); saveAll(); }
+    });
+
+    // toggle buttons
+    ['contrast','grayscale','links','anim','dyslexia'].forEach(function(k){
+      var cap = k.charAt(0).toUpperCase() + k.slice(1);
+      var btn = document.getElementById('opt' + cap);
+      if (!btn) return;
+      btn.addEventListener('click', function(){
+        var cls = k === 'anim' ? 'a11y-stop-anim' : 'a11y-' + k;
+        setOpt(k, !body.classList.contains(cls));
+        saveAll();
+      });
+    });
+
+    document.getElementById('a11yReset').addEventListener('click', resetAll);
+  })();
+})();
+</script>
+
+</body>
+</html>
