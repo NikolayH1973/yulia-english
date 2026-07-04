@@ -876,45 +876,6 @@
     .a11y-panel{ left:14px; right:14px; width:auto; bottom:76px; }
   }
 
-  /* ==============================
-     RTL — Hebrew
-     ============================== */
-  [dir="rtl"] .about-facts div{
-    border-left:none;
-    border-right:2px solid var(--coral);
-    padding-left:0;
-    padding-right:14px;
-  }
-  [dir="rtl"] .card-panel-content{
-    padding-left:26px;
-    padding-right:82px;
-  }
-  [dir="rtl"] .card-detail-list li{
-    padding-left:0;
-    padding-right:16px;
-  }
-  [dir="rtl"] .card-detail-list li::before{
-    left:auto;
-    right:0;
-  }
-  [dir="rtl"] .level-item:hover{ transform:translateX(-2px); }
-  [dir="rtl"] .journal-list .num{ padding-top:2px; }
-  [dir="rtl"] .a11y-trigger{ left:auto; right:28px; }
-  [dir="rtl"] .a11y-panel{ left:auto; right:28px; }
-  @media (max-width:540px){
-    [dir="rtl"] .a11y-trigger{ left:auto; right:18px; }
-    [dir="rtl"] .a11y-panel{ left:14px; right:14px; }
-  }
-  [dir="rtl"] .card-panel-content{
-    padding-left:26px;
-    padding-right:82px;
-  }
-  @media (max-width:860px){
-    [dir="rtl"] .card-panel-content{ padding-right:26px; }
-  }
-  @media (max-width:540px){
-    [dir="rtl"] .card-panel-content{ padding-right:16px; }
-  }
 </style>
 </head>
 <body>
@@ -926,7 +887,6 @@
       <div class="lang-switch" role="group" aria-label="Language">
         <button class="lang-btn active" data-lang="ru" type="button">RU</button>
         <button class="lang-btn" data-lang="en" type="button">EN</button>
-        <button class="lang-btn" data-lang="he" type="button">עב</button>
       </div>
       <a class="nav-cta" id="navCta" href="https://wa.me/972533218905" target="_blank" rel="noopener" data-i18n="nav_cta">Написать в WhatsApp</a>
     </div>
@@ -1079,7 +1039,7 @@
 
           <li class="level-item" role="button" tabindex="0" aria-pressed="false"
               data-code="A1"
-              data-name-ru="Начальный" data-name-en="Beginner" data-name-he="מתחיל">
+              data-name-ru="Начальный" data-name-en="Beginner">
             <span class="level-check" aria-hidden="true"></span>
             <b>A1</b>
             <span class="level-text" data-i18n-html="lvl_a1"><strong>Начальный.</strong> Простые фразы о себе, базовые вопросы, понимание медленной, чёткой речи.</span>
@@ -1087,7 +1047,7 @@
 
           <li class="level-item" role="button" tabindex="0" aria-pressed="false"
               data-code="A2"
-              data-name-ru="Элементарный" data-name-en="Elementary" data-name-he="יסודי">
+              data-name-ru="Элементарный" data-name-en="Elementary">
             <span class="level-check" aria-hidden="true"></span>
             <b>A2</b>
             <span class="level-text" data-i18n-html="lvl_a2"><strong>Элементарный.</strong> Бытовые разговоры: покупки, транспорт, простые письма и объявления.</span>
@@ -1095,7 +1055,7 @@
 
           <li class="level-item" role="button" tabindex="0" aria-pressed="false"
               data-code="B1"
-              data-name-ru="Средний" data-name-en="Intermediate" data-name-he="בינוני">
+              data-name-ru="Средний" data-name-en="Intermediate">
             <span class="level-check" aria-hidden="true"></span>
             <b>B1</b>
             <span class="level-text" data-i18n-html="lvl_b1"><strong>Средний.</strong> Свободно говорите о знакомых темах: работа, путешествия, планы на будущее.</span>
@@ -1103,7 +1063,7 @@
 
           <li class="level-item" role="button" tabindex="0" aria-pressed="false"
               data-code="B2"
-              data-name-ru="Выше среднего" data-name-en="Upper-Intermediate" data-name-he="מעל לבינוני">
+              data-name-ru="Выше среднего" data-name-en="Upper-Intermediate">
             <span class="level-check" aria-hidden="true"></span>
             <b>B2</b>
             <span class="level-text" data-i18n-html="lvl_b2"><strong>Выше среднего.</strong> Аргументируете точку зрения, смотрите фильмы и новости без субтитров.</span>
@@ -1111,7 +1071,7 @@
 
           <li class="level-item" role="button" tabindex="0" aria-pressed="false"
               data-code="C1"
-              data-name-ru="Продвинутый" data-name-en="Advanced" data-name-he="מתקדם">
+              data-name-ru="Продвинутый" data-name-en="Advanced">
             <span class="level-check" aria-hidden="true"></span>
             <b>C1</b>
             <span class="level-text" data-i18n-html="lvl_c1"><strong>Продвинутый.</strong> Гибкая речь для учёбы и работы: презентации, деловая переписка, интервью.</span>
@@ -1119,7 +1079,7 @@
 
           <li class="level-item" role="button" tabindex="0" aria-pressed="false"
               data-code="C2"
-              data-name-ru="Proficiency" data-name-en="Proficiency" data-name-he="Proficiency">
+              data-name-ru="Proficiency" data-name-en="Proficiency">
             <span class="level-check" aria-hidden="true"></span>
             <b>C2</b>
             <span class="level-text" data-i18n-html="lvl_c2"><strong>Proficiency.</strong> Уровень, близкий к носителю: нюансы, идиомы, юмор, тонкости стиля.</span>
@@ -1147,7 +1107,6 @@
         <a class="barrier-btn"
            data-href-ru="https://wa.me/972533218905?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C%20%D0%AE%D0%BB%D1%8F!%20%D0%A3%20%D0%BC%D0%B5%D0%BD%D1%8F%20%D1%81%D0%BB%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D1%81%20%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%BD%D0%BE%D1%88%D0%B5%D0%BD%D0%B8%D0%B5%D0%BC"
            data-href-en="https://wa.me/972533218905?text=Hi%20Julia!%20I%20have%20trouble%20with%20pronunciation"
-           data-href-he="https://wa.me/972533218905?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%99%D7%95%D7%9C%D7%99%D7%94!%20%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%A7%D7%A9%D7%99%D7%99%D7%9D%20%D7%A2%D7%9D%20%D7%94%D7%92%D7%99%D7%99%D7%94"
            href="https://wa.me/972533218905?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C%20%D0%AE%D0%BB%D1%8F!%20%D0%A3%20%D0%BC%D0%B5%D0%BD%D1%8F%20%D1%81%D0%BB%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D1%81%20%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%BD%D0%BE%D1%88%D0%B5%D0%BD%D0%B8%D0%B5%D0%BC"
            target="_blank" rel="noopener">
           <span>01</span><span data-i18n="b1">Произношение</span>
@@ -1155,7 +1114,6 @@
         <a class="barrier-btn"
            data-href-ru="https://wa.me/972533218905?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C%20%D0%AE%D0%BB%D1%8F!%20%D0%AF%20%D0%B1%D0%BE%D1%8E%D1%81%D1%8C%20%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%B8%D1%82%D1%8C%20%D0%BD%D0%B0%20%D0%B0%D0%BD%D0%B3%D0%BB%D0%B8%D0%B9%D1%81%D0%BA%D0%BE%D0%BC"
            data-href-en="https://wa.me/972533218905?text=Hi%20Julia!%20I%27m%20afraid%20to%20speak%20English"
-           data-href-he="https://wa.me/972533218905?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%99%D7%95%D7%9C%D7%99%D7%94!%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A4%D7%97%D7%93%20%D7%9C%D7%93%D7%91%D7%A8%20%D7%90%D7%A0%D7%92%D7%9C%D7%99%D7%AA"
            href="https://wa.me/972533218905?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C%20%D0%AE%D0%BB%D1%8F!%20%D0%AF%20%D0%B1%D0%BE%D1%8E%D1%81%D1%8C%20%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%B8%D1%82%D1%8C%20%D0%BD%D0%B0%20%D0%B0%D0%BD%D0%B3%D0%BB%D0%B8%D0%B9%D1%81%D0%BA%D0%BE%D0%BC"
            target="_blank" rel="noopener">
           <span>02</span><span data-i18n="b2">Страх говорить</span>
@@ -1163,7 +1121,6 @@
         <a class="barrier-btn"
            data-href-ru="https://wa.me/972533218905?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C%20%D0%AE%D0%BB%D1%8F!%20%D0%9C%D0%BD%D0%B5%20%D0%BD%D1%83%D0%B6%D0%BD%D0%B0%20%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0%20%D0%BA%20%D1%8D%D0%BA%D0%B7%D0%B0%D0%BC%D0%B5%D0%BD%D1%83"
            data-href-en="https://wa.me/972533218905?text=Hi%20Julia!%20I%20need%20help%20preparing%20for%20an%20exam"
-           data-href-he="https://wa.me/972533218905?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%99%D7%95%D7%9C%D7%99%D7%94!%20%D7%90%D7%A0%D7%99%20%D7%A6%D7%A8%D7%99%D7%9A%20%D7%94%D7%9B%D7%A0%D7%94%20%D7%9C%D7%91%D7%97%D7%99%D7%A0%D7%94"
            href="https://wa.me/972533218905?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C%20%D0%AE%D0%BB%D1%8F!%20%D0%9C%D0%BD%D0%B5%20%D0%BD%D1%83%D0%B6%D0%BD%D0%B0%20%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0%20%D0%BA%20%D1%8D%D0%BA%D0%B7%D0%B0%D0%BC%D0%B5%D0%BD%D1%83"
            target="_blank" rel="noopener">
           <span>03</span><span data-i18n="b3">Подготовка к экзамену</span>
@@ -1171,7 +1128,6 @@
         <a class="barrier-btn"
            data-href-ru="https://wa.me/972533218905?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C%20%D0%AE%D0%BB%D1%8F!%20%D0%9D%D1%83%D0%B6%D0%BD%D0%B0%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%20%D1%81%D0%BE%20%D1%88%D0%BA%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%BE%D0%B9"
            data-href-en="https://wa.me/972533218905?text=Hi%20Julia!%20I%20need%20help%20with%20the%20school%20curriculum"
-           data-href-he="https://wa.me/972533218905?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%99%D7%95%D7%9C%D7%99%D7%94!%20%D7%90%D7%A0%D7%99%20%D7%A6%D7%A8%D7%99%D7%9A%20%D7%A2%D7%96%D7%A8%D7%94%20%D7%91%D7%AA%D7%95%D7%9B%D7%A0%D7%99%D7%AA%20%D7%94%D7%9C%D7%99%D7%9E%D7%95%D7%93%D7%99%D7%9D"
            href="https://wa.me/972533218905?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C%20%D0%AE%D0%BB%D1%8F!%20%D0%9D%D1%83%D0%B6%D0%BD%D0%B0%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%20%D1%81%D0%BE%20%D1%88%D0%BA%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%BE%D0%B9"
            target="_blank" rel="noopener">
           <span>04</span><span data-i18n="b4">Школьная программа</span>
@@ -1400,83 +1356,6 @@
       a11y_anim:      'Stop animations',
       a11y_dyslexia:  'Readable font',
       a11y_reset:     'Reset all'
-    },
-    he: {
-      nav_cta:        'שלחו הודעה בוואטסאפ',
-      hero_eyebrow:   'אנגלית · תל אביב · אונליין ופרונטאלי',
-      hero_h1:        'דברו אנגלית <em>בקלות</em>, כמו שקיעה על שפת הים',
-      hero_sub:       '15 שנות הוראה, תואר בתרגום — ובלי שינון. רק שיחה חיה, הגייה ברורה ותוכנית לפי המטרה שלכם.',
-      hero_btn1:      'שלחו ליוליה →',
-      hero_btn2:      'קראו עוד',
-      stat1:          'שנות הוראה',
-      stat2:          'מאפס ועד Proficiency',
-      stat3_b:        'ילדים / מבוגרים',
-      stat3:          'תוכנית אישית',
-      about_eyebrow:  'עליי',
-      about_h2:       'אנגלית היא האהבה שלי מגיל שלוש, ועדיין לא יכולה לעצור',
-      about_quote:    '«אני רוצה שהדקדוק יהיה החבר שלכם, לא העונש»',
-      about_p:        'סיימתי תואר בתרגום והוראת שפות זרות. יותר מ-15 שנה אני מלמדת אנגלית לילדים ולמבוגרים — התחלתי עוד בבית הספר. אני אוהבת חיות, ים, שקיעות וזריחות, עוגת גבינה ופוטוגרפיה — וזה מורגש בשיעורים: בלי לחץ, חיים ואמיתיים.',
-      fact1:          'תואר בתרגום ובהוראת שפות זרות',
-      fact2:          'ניסיון עם תלמידים, מבוגרים והכנה לבחינות',
-      fact3:          'קצב ותוכנית אישית לכל תלמיד',
-      whom_eyebrow:   'למי מתאים',
-      whom_h2:        'שלושה מצבים שמגיעים איתם הכי הרבה',
-      card1_title:    'תלמידי בית ספר',
-      card1_desc:     'מכסים את חומר הלימוד, סוגרים פערים ומכינים לבגרות — בלי פאניקה לפני מבחנים.',
-      card1_li1:      'עוברים על נושאים קשים בתוכנית — זמנים, דיבור עקיף, מבנים שמבלבלים במבחנים.',
-      card1_li2:      'הכנה לבגרות: מודולים 3, 4 ו-5 — פורמט הבחינה, משימות טיפוסיות, תזמון וטעויות נפוצות.',
-      card1_li3:      'עובדים עם שיעורי בית ונושאים אמיתיים מהכיתה — לא תרגילים מופשטים.',
-      card1_li4:      'מקבלת תלמידים מבית ספר יסודי ועד כיתות י"ב — לפי גיל ורמה.',
-      card2_title:    'מבוגרים',
-      card2_desc:     'מסירים את חסם השפה ולומדים ליהנות משיחה באנגלית — בעבודה ובטיולים.',
-      card2_li1:      'עובדים על הפחד לטעות ולהישמע "מגוחך" — זה מה שמונע לדבר, לפני הדקדוק.',
-      card2_li2:      'מכינים אנגלית שיחתית לעבודה: ראיונות, התכתבות עם עמיתים, מצגות.',
-      card2_li3:      'מתרגלים מצבי יום-יום: שדה תעופה, רופא, בנק, שיחה עם שכנים.',
-      card2_li4:      'לוח זמנים גמיש למבוגר עסוק — בלי קצב נוקשה וספר לימוד.',
-      card3_title:    'מי שרוצה חופש',
-      card3_desc:     'לכל מי שרוצה לדבר בחופשיות ובביטחון — בלי ספר לימוד, על נושאים חיים ואמיתיים.',
-      card3_li1:      'מדברים על נושאים שבאמת מעניינים: סרטים, חדשות, תחביבים — לא יחידה מהספר.',
-      card3_li2:      'עובדים על טבעיות הדיבור: ניבים, ביטויים וגם הומור.',
-      card3_li3:      'הכנה לעלייה או חיים בחו"ל — הבנת אנגלית מדוברת מהירה וחיה.',
-      card3_li4:      'מתרגלים ביטחון בשיחה: בפגישות, כנסים, טיולים — בלי קיפאון.',
-      journal_eyebrow:'מה קורה בשיעורים',
-      journal_h2:     'שיחה חיה במקום שינון',
-      jl1: 'עובדים על הגייה ומפרקים כל צליל בנפרד',
-      jl2: 'לומדים לדבר מתוך הנאה, לא מפחד לטעות',
-      jl3: 'קוראים, כותבים ומתרגלים הבנת הנשמע',
-      jl4: 'שמים דגש על שפה מדוברת, בלי לשכוח כתיבה ודקדוק',
-      jl5: 'סוגרים פערים בידע ובונים את אוצר המילים הנחוץ',
-      jl6: 'עובדים עם חומרים עדכניים, חיים ומעניינים',
-      levels_h3:      'תוכנית בשבילך — מאפס ועד Proficiency',
-      levels_p:       'הקצב והתוכנית נבחרים אישית: לפי תוכנית הלימודים, בחינה בינלאומית, ראיון עבודה — או פשוט הנאה מהשפה.',
-      lvl_a1: '<strong>מתחיל.</strong> ביטויים פשוטים על עצמך, שאלות בסיסיות, הבנת דיבור איטי וברור.',
-      lvl_a2: '<strong>יסודי.</strong> שיחות יום-יום: קניות, תחבורה, מכתבים פשוטים.',
-      lvl_b1: '<strong>בינוני.</strong> מדברים בחופשיות על נושאים מוכרים: עבודה, טיולים, תוכניות.',
-      lvl_b2: '<strong>מעל לבינוני.</strong> מנמקים עמדה, צופים בסרטים וחדשות בלי כתוביות.',
-      lvl_c1: '<strong>מתקדם.</strong> שפה גמישה ללימודים ועבודה: מצגות, התכתבות עסקית, ראיונות.',
-      lvl_c2: '<strong>Proficiency.</strong> רמה קרובה לשפת אם: ניואנסים, ניבים, הומור, עדינות סגנון.',
-      goal_prefix:        'המטרה שלך:',
-      goal_placeholder:   'בחרו רמה למעלה',
-      goal_btn_prefix:    'כתבו ליוליה על',
-      goal_btn_code:      'הרמה הזאת',
-      goal_wa_msg:        'שלום יוליה! אני רוצה להגיע לרמה ',
-      barriers_eyebrow:   'רוצים להתחיל?',
-      barriers_h2:        'מה הקושי העיקרי שלך כרגע?',
-      b1: 'הגייה',
-      b2: 'פחד לדבר',
-      b3: 'הכנה לבחינה',
-      b4: 'תוכנית לימודים',
-      barriers_btn:   'שלחו בוואטסאפ: 053-321-8905 →',
-      footer_p:       'תל אביב · אונליין ופרונטאלי · ווטסאפ 053-321-8905',
-      page_title:     'יוליה — שיעורי אנגלית בתל אביב',
-      a11y_title:     'נגישות',
-      a11y_fontsize:  'גודל גופן',
-      a11y_contrast:  'ניגודיות גבוהה',
-      a11y_grayscale: 'גווני אפור',
-      a11y_links:     'הדגש קישורים',
-      a11y_anim:      'עצור אנימציות',
-      a11y_dyslexia:  'גופן קריא',
-      a11y_reset:     'אפס הכל'
     }
   };
 
@@ -1488,8 +1367,7 @@
   function setLang(lang) {
     currentLang = lang;
     localStorage.setItem('lang', lang);
-    document.documentElement.lang = lang;
-    document.documentElement.dir = (lang === 'he') ? 'rtl' : 'ltr';
+    document.documentElement.lang = (lang === 'en') ? 'en' : 'ru';
     document.title = T[lang].page_title;
 
     // text nodes
